@@ -1,0 +1,8 @@
+/* FRUTIGER */
+@font-face {
+  font-family: "Frutiger";
+  src: url("../fonts//FrutigerLTStd-Black.woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
