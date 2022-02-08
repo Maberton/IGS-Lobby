@@ -1,13 +1,15 @@
-<section class="header">
+<section>
+  <img class="image-header" src="../../assets/images/header.png" alt="">
   <button class="logout"></button>
-  <!-- <button class="help"></button> -->
+  <button class="help"></button>
+  <span class="jackpot">JACKPOT</span>
   <span class="dollar">$</span> <span class="score">{{score | number: '1.0-0' : locale}}</span>
-  <!-- <span class="dollar">$</span> -->
-  <!-- <button class="toggle-cash"></button> -->
+  <span class="dollar-cash">$</span>
+  <span *ngIf="showCash" class="available-cash">{{cash | number: '1.0-2' : locale}}</span>
+  <div *ngIf="!showCash" class="hidden-cash"></div>
+  <button class="toggle-cash" [class.showing]="showCash" (click)="toggleCash()"></button>
 </section>
-<section class="game-list">
-
+<app-game-list></app-game-list>
+<section class="footer">
+  <img class="image-footer" src="../../assets/images/footer.png" alt="">
 </section>
-
-<!-- <img class="image-header" src="../../assets/images/header.png" alt=""> -->
-<!-- <h1 class="score">12.800.00</h1> -->

@@ -7,14 +7,19 @@ import { Component, OnInit, LOCALE_ID, Inject } from '@angular/core';
 })
 export class LobbyComponent implements OnInit {
 
-  score = 12800000;
+  score = 17300000;
+  cash = 1470.56;
+  showCash = false;
 
   constructor(
     @Inject(LOCALE_ID) public locale: string
   ) { }
 
   ngOnInit(): void {
-    console.log('local - ', this.locale);
+  }
+
+  toggleCash(): void {
+    this.showCash = !this.showCash;
   }
 
 }

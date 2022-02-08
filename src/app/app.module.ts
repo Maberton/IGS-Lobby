@@ -7,13 +7,17 @@ import { LobbyComponent } from './lobby/lobby.component';
 
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { GameListComponent } from './game-list/game-list.component';
+import { GameComponent } from './game/game.component';
 
 registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
     AppComponent,
-    LobbyComponent
+    LobbyComponent,
+    GameListComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,

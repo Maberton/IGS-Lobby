@@ -1,11 +1,11 @@
-.header {
-  position: absolute;
-  top: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
+.image-header {
   width: 100vw;
-  height: 100vh;
-  background-image:url('../../assets/images/header.png');
+}
+
+.image-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
 }
 
 .base-button {
@@ -14,6 +14,12 @@
   padding: 0;
   border: none;
   outline: none;
+  top: 0;
+  z-index: 1;
+  cursor: pointer;
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 .standard-text {
@@ -23,7 +29,6 @@
   -webkit-text-fill-color: transparent; 
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
-  // -webkit-text-stroke: 1px black;
   font-family: 'Frutiger', sans-serif;
 }
 
@@ -38,6 +43,23 @@
   font-weight: 700;
 }
 
+.jackpot {
+  @extend .standard-text;
+  position: absolute;
+  top: 0.5vw;
+  left: 50%;
+  font-size: 2vw;
+  transform: translateX(-50%);  
+  font-weight: 700;
+  // &::after {
+  //   top: 0;
+  //   left: 50%;
+  //   font-size: 2.1vw;
+  //   transform: translateX(-50%);  
+  //   font-weight: 700;
+  // }
+}
+
 .dollar {
   @extend .standard-text;
   position: absolute;
@@ -45,20 +67,67 @@
   left: 35%;
   transform: translateX(-35%);
   padding-top: 4.5%;
-  font-size: 1.5vw;
+  font-size: 2vw;
   font-weight: 700;
+
+  &-cash {
+    @extend .standard-text;
+    position: absolute;
+    top: 2.3vw;
+    right: 18.4vw;
+    font-size: 2vw;
+    font-weight: 700;
+  }
 }
 
 .logout {
   @extend .base-button;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  height: 7vh;
+  left: 1vw;
+  top: 1vw;
+  height: 4vw;
   width: 7vw;
-  margin-top: 1.5%;
-  margin-left: 1%;
-  cursor: pointer;
   background: url('../../assets/images/logout_idle.png') no-repeat scroll 0 0 transparent;
   background-size: contain;
+}
+
+.help {
+  @extend .base-button;
+  left: 6vw;
+  top: 1vw;
+  height: 4vw;
+  width: 7vw;
+  background: url('../../assets/images/help_idle.png') no-repeat scroll 0 0 transparent;
+  background-size: contain;
+}
+
+.toggle-cash {
+  @extend .base-button;
+  right: 1.6vw;
+  top: 1.7vw;
+  height: 3vw;
+  width: 5vw;
+  background: url('../../assets/images/eye_idle.png') no-repeat scroll 0 0 transparent;
+  background-size: contain;
+
+  &.showing {
+    background: url('../../assets/images/eye_off_idle.png') no-repeat scroll 0 0 transparent;
+    background-size: contain;
+  }
+}
+
+.available-cash {
+  @extend .standard-text;
+  position: absolute;
+  right: 8.6vw;
+  top: 2.2vw;
+  font-size: 2vw;
+}
+
+.hidden-cash {
+  width: 9vw;
+  height: 2px;
+  position: absolute;
+  right: 8.4vw;
+  top: 3.2vw;
+  background-color: gold;
 }

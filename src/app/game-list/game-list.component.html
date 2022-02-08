@@ -1,0 +1,16 @@
+<section class="container-games">
+  <div class="left">
+    <button class="left-icon"></button>
+  </div>
+  <section class="game-list">
+    <ng-container *ngFor="let game of games;">
+      <app-game [jackpot]="game.jackpot"></app-game>
+    </ng-container>
+    <ng-container *ngFor="let page of pages;">
+
+    </ng-container>
+  </section>
+  <div class="right">
+    <button class="right-icon"></button>
+  </div>
+</section>
